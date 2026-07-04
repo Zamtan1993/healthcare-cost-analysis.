@@ -1,54 +1,43 @@
-Healthcare Billing Cost Prediction
+Healthcare Billing Analysis & Predictive Modeling
 
-🏥 Project Overview
-This project performs an end-to-end machine learning analysis on a healthcare dataset. The goal was to build a predictive model to estimate hospital Billing Amount based on patient demographics, medical conditions, and admission details, and to identify which factors most significantly influence these costs.
+📝 Executive Summary
+This project aimed to predict patient billing amounts using demographic and clinical data. After conducting thorough data cleaning, feature engineering, and applying a RandomForestRegressor, the analysis revealed that the provided dataset does not contain the necessary features to predict billing outcomes. This finding serves as a case study in data quality and the importance of feature selection in healthcare analytics.
 
-📊 Methodology
-Data Cleaning: Removed non-predictive identifiers (Name, Doctor, Hospital) and ensured data integrity.
+🛠 Methodology
+Data Cleaning: Implemented SimpleImputer to handle missing values and utilized custom logic to convert raw strings into usable numerical formats.
 
-Feature Engineering: Calculated Length of Stay (the number of days between admission and discharge) as a potential predictor for hospital costs.
+Feature Engineering: * Calculated Length_of_Stay by processing admission and discharge date timestamps.
 
-Data Preprocessing: Utilized LabelEncoder to convert categorical variables (such as "Medical Condition" and "Insurance Provider") into a numerical format suitable for machine learning algorithms.
+Created Age_Group bins to capture non-linear impacts of age on medical costs.
 
-Modeling: Implemented a RandomForestRegressor to predict hospital billing amounts, utilizing a 80/20 train-test split.
+Modeling: Utilized a RandomForestRegressor for non-linear pattern recognition.
 
-📈 Key Insights
-Prediction Performance: The model achieved a Mean Absolute Error (MAE) of approximately $11,664.
+Evaluation: Used MAE (Mean Absolute Error) and R-squared to measure model performance.
 
-Feature Importance: Analysis revealed that while the model utilized various patient demographics, the available features showed a weak correlation with total billing. This suggests that actual healthcare costs in this dataset are likely driven by clinical procedures or illness severity factors not fully captured in the current variables.
+📈 Key Findings
+Low Predictive Power: The model yielded an R 
+2
+  of 0.04, indicating that the chosen features explain very little of the variance in billing.
 
-🛠️ Tech Stack
-Language: Python
+Correlation Analysis: A Pearson correlation analysis confirmed that demographic variables (Gender, Blood Type, Age) have essentially zero correlation with the final billing amount.
 
-Core Libraries: pandas, scikit-learn, matplotlib, numpy
+Conclusion: The billing amounts in this dataset likely depend on proprietary clinical fee schedules or surgical procedure codes not present in the features.
 
-Project structure:
-├── data/
-│   └── healthcare_dataset 2.csv
-├── images/
-│   └── feature_importance.png
-├── src/
-│   └── prediction_model.py
-├── requirements.txt
-└── README.md
+🚀 How to Run:
 
-🚀 How to Run
-Clone this repository to your local machine.
+Ensure the required dependencies are installed:
 
-Install the required dependencies:
-
+Bash
 pip install -r requirements.txt
-
-Ensure your dataset is located in the data/ folder.
-
 Run the analysis script:
-python src/prediction_model.py
 
-🔮 Future Improvements
-Advanced Modeling: Explore Gradient Boosting frameworks like XGBoost or LightGBM to improve regression performance potentially.
+Bash
+python model.py
+📦 Requirements
+pandas, numpy
 
-Data Enrichment: Incorporate external datasets containing CPT/ICD-10 procedure codes to reflect real-world clinical billing structures better.
+scikit-learn
 
-<img width="1346" height="785" alt="image" src="https://github.com/user-attachments/assets/8405192d-5d63-4585-bac3-a7b5e8acc60e" />
+matplotlib, seaborn
 
-
+<img width="673" height="379" alt="image_2" src="https://github.com/user-attachments/assets/7f1c632f-1d54-43c1-9cf2-e4860fa736b5" />
