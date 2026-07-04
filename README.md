@@ -49,5 +49,6 @@ Advanced Modeling: Explore Gradient Boosting frameworks like XGBoost or LightGBM
 
 Data Enrichment: Incorporate external datasets containing CPT/ICD-10 procedure codes to reflect real-world clinical billing structures better.
 
-![Feature Importance](feature_importance.png)
+<img width="1346" height="785" alt="image" src="https://github.com/user-attachments/assets/8405192d-5d63-4585-bac3-a7b5e8acc60e" />
+
 
