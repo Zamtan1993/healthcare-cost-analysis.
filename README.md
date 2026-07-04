@@ -45,6 +45,9 @@ Run the analysis script:
 python src/prediction_model.py
 
 🔮 Future Improvements
-Advanced Modeling: Explore Gradient Boosting frameworks like XGBoost or LightGBM to potentially improve regression performance.
+Advanced Modeling: Explore Gradient Boosting frameworks like XGBoost or LightGBM to improve regression performance potentially.
 
-Data Enrichment: Incorporate external datasets containing CPT/ICD-10 procedure codes to better reflect real-world clinical billing structures.
+Data Enrichment: Incorporate external datasets containing CPT/ICD-10 procedure codes to reflect real-world clinical billing structures better.
+
+![Feature Importance](image_ba556a.png)
+
